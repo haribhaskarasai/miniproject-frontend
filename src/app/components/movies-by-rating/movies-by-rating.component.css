@@ -1,0 +1,27 @@
+.bg-container{
+    background-image: linear-gradient(gray,black);
+    background-size: cover;
+    min-height: 90vh;
+}
+.example-card {
+    max-width: 300px;
+    max-height: 450px;
+}
+.example-card:hover{
+    transform: scale(1.1);
+    box-shadow: 5px 5px 15px rgba(149, 182, 180, 0.651);
+}
+.star-color{
+    color: rgb(237, 240, 49);
+    font-size: 17px;
+    margin: 2px;
+
+}
+.crop{
+    overflow: hidden;
+}
+.rating-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}

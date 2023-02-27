@@ -1,0 +1,64 @@
+<div mat-dialog-content style="width:550px;height:600px">
+    <div class="bg-container">
+        <div class="card">
+            <div class="card-body ">
+                <form [formGroup]="addActorForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group mb-0 mt-1">
+                        <label for="actorName" class="mb-0"
+                            [ngStyle]="{'color': 'black','font-size': '20px', 'font-weight': '500' }">Actor Name</label>
+                        <input type="text" id="actorName" name="actorName" placeholder="Enter Actor Name" formControlName="actorName"
+                            class="form-control mb-1" [ngClass]="{ 'is-invalid': submitted && f.actorName.errors }" />
+                        <div *ngIf="submitted && f.actorName.errors" class="invalid-feedback">
+                            <div *ngIf="f.actorName.errors.required">Actor Name is required</div>
+                            <div *ngIf="f.actorName.errors?.['maxlength']">Actor Name must be maximum of 20 characters</div>
+                        </div>
+                    </div>
+                    <div class="form-group mb-0 mt-3">
+                        <label for="actorRole" class="mb-0"
+                            [ngStyle]="{'color': 'black','font-size': '20px', 'font-weight': '500' }">Actor Role</label>
+                        <input type="text" id="actorRole" placeholder="Enter Actor Role" formControlName="actorRole"
+                            class="form-control mb-1" [ngClass]="{ 'is-invalid': submitted && f.actorRole.errors }" />
+                        <div *ngIf="submitted && f.actorRole.errors" class="invalid-feedback">
+                            <div *ngIf="f.actorRole.errors.required">Actor Role is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group mb-0 mt-3">
+                        <label for="actorAge" class="mb-0"
+                            [ngStyle]="{'color': 'black','font-size': '20px', 'font-weight': '500' }">Actor Age</label>
+                        <input type="number" class="form-control mb-1" id="actorAge" placeholder="Enter Actor Age"
+                            min="1" max="120" formControlName="actorAge"
+                            [ngClass]="{ 'is-invalid': submitted && f.actorAge.errors }">
+                        <div *ngIf="submitted && f.actorAge.errors" class="invalid-feedback">
+                            <div *ngIf="f.actorAge.errors.required">Actor Age is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group mb-0 mt-3">
+                        <label for="actorImageUrl" class="mb-0"
+                            [ngStyle]="{'color': 'black','font-size': '20px', 'font-weight': '500' }">Actor ImageUrl</label>
+                        <input type="text" id="actorImageUrl" placeholder="Enter Actor ImageUrl" formControlName="actorImageUrl"
+                            class="form-control mb-1" [ngClass]="{ 'is-invalid': submitted && f.actorImageUrl.errors }" />
+                        <div *ngIf="submitted && f.actorImageUrl.errors" class="invalid-feedback">
+                            <div *ngIf="f.actorImageUrl.errors.required">Actor Image Url is required</div>
+                            <div *ngIf="f.actorImageUrl.errors?.['minlength']">Actor Image Url must be atleast 8 characters</div>
+                        </div>
+                    </div>
+                    <div class="form-group mb-0 mt-3">
+                        <label for="actorDescrip" class="mb-0"
+                            [ngStyle]="{'color': 'black','font-size': '20px', 'font-weight': '500' }">Actor Description</label>
+                        <input type="text" id="actorDescrip" placeholder="Enter Actor Description" formControlName="actorDescrip"
+                            class="form-control mb-1" [ngClass]="{ 'is-invalid': submitted && f.actorDescrip.errors }" />
+                        <div *ngIf="submitted && f.actorDescrip.errors" class="invalid-feedback">
+                            <div *ngIf="f.actorDescrip.errors.required">Actor Description is required</div>
+                            <div *ngIf="f.actorDescrip.errors?.['minlength']">Actor Description must be atleast 8 characters</div>
+                        </div>
+                    </div>
+                    <div class="form-group text-center d-flex flex-row justify-content-center">
+                        <button [disabled]="addActorForm.invalid" class="btn btn-primary mt-3" type="submit">
+                            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                            Add
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>

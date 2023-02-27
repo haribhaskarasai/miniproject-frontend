@@ -1,0 +1,9 @@
+.bg-container{
+  background-image: linear-gradient(gray,black);
+  background-size: cover;
+  min-height: 100vh;
+}
+.image{
+  width: 450px;
+  height: 250px;
+}

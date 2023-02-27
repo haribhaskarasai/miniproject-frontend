@@ -1,0 +1,59 @@
+<app-header></app-header>
+<!-- <h2>Actor Details</h2>
+
+<hr />
+<div *ngIf="actor">
+    <div>
+        <label><b>Actor Id: </b></label> {{actor.actorId}}
+    </div>
+    <div>
+        <label><b>Actor Name: </b></label> {{actor.actorName}}
+    </div>
+    <div>
+        <label><b>Actor Date: </b></label> {{actor.actorRole}}
+    </div>
+</div>
+
+<br> -->
+<!-- <div class="bg-container d-flex flex-row justify-content-center align-items-center">
+<mat-card class="example-card" >
+    <mat-card-header class=" d-flex flex-row justify-content-center">
+      <mat-card-title > {{actor.actorName}}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="https://www.pngkit.com/png/detail/17-175707_reels-and-gtel-moviereelsandpopcorn-movie-reel-and-popcorn.png" >
+    <mat-card-content >
+        <p>
+            To perform Edit Operations about Movies just go with the options below
+          </p>
+          <p style="color:rgb(226, 230, 45); font-weight: 500;">Actor Role: <span class="margin-left-3" style="color:black">{{actor.actorRole}}</span> </p>
+                    
+    </mat-card-content>
+  </mat-card>
+</div> -->
+<div class="bg-container">
+    <div class="row">
+        <div class="col-1"></div>
+        <div *ngIf="actor" class="d-flex flex-column margin-left-5 mt-5 m-2 col-4">
+            <div>
+                <div class="image">
+                    <img class="image" src="{{actor.actorImageUrl}}" >
+                </div>
+                <div class="m-3">
+                    <div class="d-flex flex-row justify-content-between">
+                        <p> <span style="color:rgb(216, 230, 32);font-weight: bold;">Actor Age:</span>  <span
+                                style="color:white">{{actor.actorAge}}</span> </p>
+                        <p> <span class="ml-2" style="color:rgb(216, 230, 32);font-weight: bold;">Actor Role : </span><span style="color:white">
+                                {{actor.actorRole}}</span> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-column col-6 mt-3" style="padding: 25px;">
+
+            <h1 class="d-flex flex-row justify-content-center mt-2"
+                style="color:white;font-size: 50px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-weight: bold;">
+                {{actor.actorName}}</h1>
+                <P style="color:white;width: 500px;" class="m-2">{{actor.actorDescrip}}</P>
+        </div>
+    </div>
+</div>

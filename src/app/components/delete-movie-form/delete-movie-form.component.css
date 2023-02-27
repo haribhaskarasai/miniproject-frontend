@@ -1,0 +1,40 @@
+.bg-container{
+    background-image:  url("https://cdn.britannica.com/60/182360-050-CD8878D6/Avengers-Age-of-Ultron-Joss-Whedon.jpg");
+    background-size: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+}
+.form-container{
+   background-size: 100%;
+    border-radius: 10px;
+    height: 60vh;
+    padding:15px;
+    display: flex;
+    background-color: #ffffff;
+    opacity: 0.6;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.crediential-names{
+    color:rgba(12, 11, 11, 0.959);
+    font-family:"Roboto";
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+.warning-msg{
+    font-family:"Roboto";
+    font-size: 10px;
+    margin:0px;
+}
+
+.warning-msg1{
+    font-family:"Roboto";
+    font-size: 12px;
+    margin:0px;
+}

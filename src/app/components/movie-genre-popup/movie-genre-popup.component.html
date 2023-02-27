@@ -1,0 +1,11 @@
+<div mat-dialog-content>
+    <p>Enter Movie Genre</p>
+    <mat-form-field appearance="fill">
+      <mat-label>Movie Genre?</mat-label>
+      <input matInput [(ngModel)]="mvGener">
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions class="d-flex flex-row justify-content-between">
+    <button mat-button  cdkFocusInitial (click)="openEditPage()">Back</button>
+    <button mat-button [mat-dialog-close]="mvGener" cdkFocusInitial (click)="openlog()">Ok</button>
+  </div>

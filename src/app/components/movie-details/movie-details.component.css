@@ -1,0 +1,26 @@
+.bg-container{
+    background-image: linear-gradient(gray,black);
+    background-size: cover;
+    height: 90vh;
+}
+.video{
+    min-width: 450px;
+    min-height: 300px;
+}
+.star-color{
+    color: rgb(201, 11, 11);
+    font-size: 17px;
+    margin: 2px;
+
+}
+.crop{
+    overflow: hidden;
+}
+.rating-container{
+    display: flex;
+}
+.example-action-button {
+    margin-top: 8px;
+    margin-right: 8px;
+  }
+  

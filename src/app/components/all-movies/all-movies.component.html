@@ -1,0 +1,64 @@
+<app-header></app-header>
+<!-- <div class = "row">
+    <h2> Movies List</h2>
+</div>
+
+<table class = "table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th> Movie Id</th>
+            <th> Movie Name </th>
+            <th> Movie Gener </th>
+            <th> Movie Rating </th>
+            <th> Movie ReleaseDate </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let movie of movies" >
+            <td> {{movie.mvId}} </td>
+            <td> {{movie.mvName }} </td>
+            <td> {{movie.mvGener}} </td>
+            <td> {{ movie.mvRating }} </td>
+            <td> {{ movie.releaseDate }} </td>
+            <td>
+               <button (click) = "movieDeails(movie.mvName,movie.releaseDate)" class = "btn btn-primary" style="margin-left: 10px"> View</button>
+            </td>
+        </tr>
+    </tbody>
+</table> -->
+<div class="bg-container">
+    <div class="row">
+        <div *ngFor=" let movie of movies" class="col-3">
+            <mat-card class="example-card m-4 mt-5">
+                <mat-card-header class=" d-flex flex-row justify-content-center">
+                    <mat-card-title>{{movie.mvName }}</mat-card-title>
+                </mat-card-header>
+                <img mat-card-image style="height: 30vh;" src={{movie.mvImageUrl}} alt="Photo of a Movie">
+                <mat-card-content>
+                    <p ><span style="font-weight: bold;">Movie Genre :</span>   {{movie.mvGener}} </p>
+                    <p><span style="font-weight: bold;"> RelaseDate : </span>{{ movie.releaseDate }}</p>
+                    <div class="rating-container d-flex flex-row justify-content-between">
+                        <div class="d-flex flex-row">
+                            <p><span style="font-weight: bold;">Rating:</span></p>
+                            <div class="crop" style.width.px="{{movie.mvRating*20}}">
+                                <div style="width: 100px">
+                                    <span class="fa fa-star star-color"></span>
+                                    <span class="fa fa-star star-color"></span>
+                                    <span class="fa fa-star star-color"></span>
+                                    <span class="fa fa-star star-color"></span>
+                                    <span class="fa fa-star star-color"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <p>[{{movie.mvRating}}]</p>
+                    </div>
+
+                </mat-card-content>
+                <mat-card-actions class="d-flex flex-row justify-content-center">
+                    <button (click)="movieDeails(movie.mvName,movie.releaseDate)" mat-button style="opacity: 0.7;"
+                        class="btn btn-primary ">View</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>

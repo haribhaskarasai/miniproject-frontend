@@ -1,0 +1,22 @@
+<div mat-dialog-content>
+    <p>Enter Movie Details</p>
+    <div class="d-flex flex-column">
+        <mat-form-field appearance="fill">
+            <mat-label>Movie Name?</mat-label>
+            <input matInput [(ngModel)]="mvName">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Release Date?</mat-label>
+            <input type="date" matInput [(ngModel)]="releaseDate">
+        </mat-form-field>
+        <p>Enter Technician Name</p>
+        <mat-form-field appearance="fill">
+            <mat-label>Technician Name?</mat-label>
+            <input  matInput [(ngModel)]="techName">
+        </mat-form-field>
+    </div>
+</div>
+<div mat-dialog-actions class="d-flex flex-row justify-content-between">
+    <button mat-button  cdkFocusInitial (click)="openEditPage()">Back</button>
+    <button mat-button mat-dialog-close="movie" cdkFocusInitial (click)="openUpdateForm()">Ok</button>
+</div>

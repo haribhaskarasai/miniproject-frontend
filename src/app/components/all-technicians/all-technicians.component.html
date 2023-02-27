@@ -1,0 +1,46 @@
+<app-header></app-header>
+<!-- <div class = "row">
+    <h2> Technicians List</h2>
+</div>
+
+<table class = "table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th> Tech Id</th>
+            <th> Tech Name </th>
+            <th> Tech Role </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let Tech of technicians" >
+            <td> {{Tech.techId}} </td>
+            <td> {{Tech.techName }} </td>
+            <td> {{Tech.techRole}} </td>
+            <td>
+               <button (click) = "techDetails(Tech.techName)" class = "btn btn-primary" style="margin-left: 10px"> View</button>
+            </td>
+        </tr>
+    </tbody>
+</table> -->
+<div class="bg-container">
+    <div class="row">
+        <div *ngFor=" let tech of technicians" class="col-3">
+            <mat-card class="example-card m-4 mt-5">
+                <mat-card-header class=" d-flex flex-row justify-content-center">
+                    <mat-card-title>{{tech.techName }}</mat-card-title>
+                </mat-card-header>
+                <img mat-card-image class="image"
+                    src="{{tech.techImageUrl}}"
+                    alt="Photo of a Technician">
+                <mat-card-content>
+                    <p><span style="font-weight: bold;margin-right: 10px;">Technician Age:</span>{{tech.techAge}}</p>
+                    <p><span style="font-weight: bold;margin-right: 10px;">Technician Role:</span>{{tech.techRole}}</p>
+                </mat-card-content>
+                <mat-card-actions class="d-flex flex-row justify-content-center">
+                    <button (click)="techDetails(tech.techName)" mat-button style="opacity: 0.7;"
+                        class="btn btn-primary ">View</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>

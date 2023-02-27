@@ -1,0 +1,92 @@
+<nav class="navbar navbar-dark bg-dark" style="background-color: black; background-size: cover;">
+  <div class="d-flex flex-row">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+    <a class="navbar-brand bg-warning rounded p-1" style="width:250px;height:40px" href="#">
+      <h1 class="text-dark" style="font-size: 30px;font-family:Fantasy">Movies Collection</h1>
+    </a>
+  </div>
+  <div>
+    <ul class="navbar-nav">
+      <li class="nav-item m-2">
+        <a *ngIf="showLogin" style="font-size:medium;font-weight: 500;color: azure;" routerLink="employees"
+          class="nav-link mr-5" routerLinkActive="active" (click)="openLoginForm()">Login</a>
+      </li>
+      <li class="nav-item m-2">
+        <a *ngIf="showLogout" style="font-size:medium;font-weight: 500;color: azure;" routerLink="employees"
+          class="nav-link mr-5" routerLinkActive="active" (click)="openLoginForm()">LogOut</a>
+
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="collapse " id="navbarToggleExternalContent" style="background-color: rgb(22, 18, 18); background-size: cover;">
+  <div class="navbar-nav bg-dark ml-2">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#movieToggleExternalContent" aria-controls="movieToggleExternalContent" aria-expanded="true"
+        aria-label="Toggle navigation">
+        <a class="nav-link active" style="color: white" id="navItem1" href="">Movies </a>
+      </button>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#castToggleExternalContent"
+        aria-controls="castToggleExternalContent" aria-expanded="true" aria-label="Toggle navigation">
+        <a class="nav-link active" style="color: white" id="navItem1" href="">Cast </a>
+      </button>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#crewToggleExternalContent"
+        aria-controls="crewToggleExternalContent" aria-expanded="true" aria-label="Toggle navigation">
+        <a class="nav-link active" style="color: white" id="navItem1" href="">Crew</a>
+      </button>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        aria-expanded="true"
+        aria-label="Toggle navigation">
+        <a class="nav-link active" style="color: white" href="">Help </a>
+      </button>
+    </div>
+    <div class="collapse" id="movieToggleExternalContent">
+      <div class="navbar-nav bg-dark ml-2">
+        <button class="navbar-toggler" type="button">
+          <a class="nav-link active" style="color: white" routerLink="/readAllMovies">show all movies </a>
+        </button>
+        <button class="navbar-toggler" type="button">
+          <a class="nav-link active" style="color: white" (click)="openMovieRatingPopup()">show all movies by Rating
+          </a>
+        </button>
+        <button class="navbar-toggler" type="button">
+          <a class="nav-link active" style="color: white" (click)="openMovieGenrePopup()">show all movies by Genre
+          </a>
+        </button>
+        <button class="navbar-toggler" type="button">
+          <a class="nav-link active" style="color: white" routerLink="/movieDetailsForm">search movie </a>
+        </button>
+      </div>
+    </div>
+    <div class="collapse" id="castToggleExternalContent">
+      <div class="navbar-nav bg-dark ml-2">
+        <button class="navbar-toggler" type="button">
+          <a class="nav-link active" style="color: white" id="navItem1" routerLink="/readAllActors">show all Actors </a>
+        </button>
+        <button class="navbar-toggler" type="button">
+          <a class="nav-link active" style="color: white" id="navItem1" (click)="openCastDetailPopup()">search Actor
+          </a>
+        </button>
+      </div>
+    </div>
+    <div class="collapse" id="crewToggleExternalContent">
+      <div class="navbar-nav bg-dark ml-2">
+        <button class="navbar-toggler" type="button">
+          <a class="nav-link active" style="color: white" id="navItem1" routerLink="/readAllTechnicians">show all
+            Technicians </a>
+        </button>
+        <button class="navbar-toggler" type="button">
+          <a class="nav-link active" style="color: white" id="navItem1" (click)="openCrewDetailPopup()">search
+            Technician </a>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

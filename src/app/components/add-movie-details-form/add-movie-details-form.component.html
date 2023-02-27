@@ -1,0 +1,103 @@
+<app-header></app-header>
+<div class="bg-container">
+    <div class="card">
+        <div class="card-body ">
+            <form [formGroup]="addMovieForm" (ngSubmit)="onSubmit()">
+                <div class="form-group mb-0 mt-1">
+                    <label for="mvName" class="mb-0"
+                        [ngStyle]="{'color': 'black','font-size': '20px', 'font-weight': '500' }">Movie Name</label>
+                    <input type="text" id="mvName" name="mvName" placeholder="Enter Movie Name" formControlName="mvName"
+                        class="form-control mb-1" [ngClass]="{ 'is-invalid': submitted && f.mvName.errors }" />
+                    <div *ngIf="submitted && f.mvName.errors" class="invalid-feedback">
+                        <div *ngIf="f.mvName.errors.required">MovieName is required</div>
+                        <div *ngIf="f.mvName.errors?.['minlength']">Movie Name must be ateast 4 characters</div>
+                        <div *ngIf="f.mvName.errors?.['maxlength']">Movie Name must be maximum of 20 characters</div>
+                    </div>
+                </div>
+                <div class="form-group mb-0 mt-3">
+                    <label for="mvGener" class="mb-0"
+                        [ngStyle]="{'color': 'black','font-size': '20px', 'font-weight': '500' }">Movie Genre</label>
+                    <input type="text" id="mvGener" placeholder="Enter Movie Genre" formControlName="mvGener"
+                        class="form-control mb-1" [ngClass]="{ 'is-invalid': submitted && f.mvGener.errors }" />
+                    <div *ngIf="submitted && f.mvGener.errors" class="invalid-feedback">
+                        <div *ngIf="f.mvGener.errors.required">Movie Genre is required</div>
+                        <div *ngIf="f.mvGener.errors?.['minlength']">Movie Genre must be atleast 8 characters</div>
+                    </div>
+                </div>
+                <div class="form-group mb-0 mt-3">
+                    <label for="mvRating" class="mb-0"
+                        [ngStyle]="{'color': 'black','font-size': '20px', 'font-weight': '500' }">Movie Rating</label>
+                    <input type="number" class="form-control mb-1" id="mvRating" placeholder="Enter Movie Rating"
+                        min="0" max="10" formControlName="mvRating"
+                        [ngClass]="{ 'is-invalid': submitted && f.mvRating.errors }">
+                    <div *ngIf="submitted && f.mvRating.errors" class="invalid-feedback">
+                        <div *ngIf="f.mvRating.errors.required">mvRating is required</div>
+                    </div>
+                </div>
+                <div class="form-group mb-0 mt-3">
+                    <label for="releaseDate" class="mb-0"
+                        [ngStyle]="{'color': 'black','font-size': '20px', 'font-weight': '500' }"> Release Date</label>
+                    <input type="date" class="form-control mb-1" id="releaseDate" placeholder="Release Date"
+                        formControlName="releaseDate" [ngClass]="{ 'is-invalid': submitted && f.releaseDate.errors }">
+                    <div *ngIf="submitted && f.releaseDate.errors" class="invalid-feedback">
+                        <div *ngIf="f.releaseDate.errors.required">Release Date is required</div>
+                    </div>
+                </div>
+                <div class="form-group mb-0 mt-3">
+                    <label for="mvImageUrl" class="mb-0"
+                        [ngStyle]="{'color': 'black','font-size': '20px', 'font-weight': '500' }">Movie ImageUrl</label>
+                    <input type="text" id="mvImageUrl" placeholder="Enter Movie ImageUrl" formControlName="mvImageUrl"
+                        class="form-control mb-1" [ngClass]="{ 'is-invalid': submitted && f.mvImageUrl.errors }" />
+                    <div *ngIf="submitted && f.mvImageUrl.errors" class="invalid-feedback">
+                        <div *ngIf="f.mvImageUrl.errors.required">Movie Image Url is required</div>
+                        <div *ngIf="f.mvImageUrl.errors?.['minlength']">Movie Image Url must be atleast 8 characters</div>
+                    </div>
+                </div>
+                <div class="form-group mb-0 mt-3">
+                    <label for="mvVideoUrl" class="mb-0"
+                        [ngStyle]="{'color': 'black','font-size': '20px', 'font-weight': '500' }">Movie VideoUrl</label>
+                    <input type="text" id="mvVideoUrl" placeholder="Enter Movie VideoUrl" formControlName="mvVideoUrl"
+                        class="form-control mb-1" [ngClass]="{ 'is-invalid': submitted && f.mvVideoUrl.errors }" />
+                    <div *ngIf="submitted && f.mvVideoUrl.errors" class="invalid-feedback">
+                        <div *ngIf="f.mvVideoUrl.errors.required">Movie VideoUrl is required</div>
+                        <div *ngIf="f.mvVideoUrl.errors?.['minlength']">Movie VideoUrl must be atleast 8 characters</div>
+                    </div>
+                </div>
+                <div class="form-group mb-0 mt-3">
+                    <label for="mvDescrip" class="mb-0"
+                        [ngStyle]="{'color': 'black','font-size': '20px', 'font-weight': '500' }">Movie Description</label>
+                    <input type="text" id="mvDescrip" placeholder="Enter Movie Description" formControlName="mvDescrip"
+                        class="form-control mb-1" [ngClass]="{ 'is-invalid': submitted && f.mvDescrip.errors }" />
+                    <div *ngIf="submitted && f.mvDescrip.errors" class="invalid-feedback">
+                        <div *ngIf="f.mvDescrip.errors.required">Movie Description is required</div>
+                        <div *ngIf="f.mvDescrip.errors?.['minlength']">Movie Description must be atleast 8 characters</div>
+                    </div>
+                </div>
+                <div class="form-group mb-0 mt-3 d-flex flex-row justify-content-between">
+                    <label for="addActors" class="mb-0"
+                        [ngStyle]="{'color': 'black','font-size': '20px', 'font-weight': '500' }">Add Actors</label>
+                    <div class="d-flex flex-row m-1">
+                        <mat-icon (click)="removeActor()" >remove_circle</mat-icon>
+                        <a class="box d-flex flex-row justify-content-center"><span style="color: white;"> {{actorCountTemp}}</span></a>
+                        <mat-icon (click)="addActor()">add_circle</mat-icon>
+                    </div>
+                </div>
+                <div class="form-group mb-0 mt-3 d-flex flex-row justify-content-between">
+                    <label for="addTechnicians" class="mb-0"
+                        [ngStyle]="{'color': 'black','font-size': '20px', 'font-weight': '500' }">Add Technicians</label>
+                    <div class="d-flex flex-row m-1">
+                        <mat-icon (click)="removeTech()">remove_circle</mat-icon>
+                        <a class="box d-flex flex-row justify-content-center"><span style="color: white;">{{techCountTemp}}</span></a>
+                       <mat-icon (click)="addTech()">add_circle</mat-icon>
+                    </div>
+                </div>
+                <div class="form-group text-center d-flex flex-row justify-content-center">
+                    <button [disabled]="addMovieForm.invalid" class="btn btn-primary mt-3" type="submit">
+                        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                        Add
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

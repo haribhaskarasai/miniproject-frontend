@@ -1,0 +1,62 @@
+<div class="bg-container">
+    <div class="row">
+        <div class="col-1"></div>
+        <div *ngIf="movie" class="d-flex flex-column mt-2 col-4">
+            <div>
+                <div class="video">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="video embed-responsive-item" src="https://www.youtube.com/watch?v=f_vbAtFSEc0"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="m-3">
+
+                    <p> <span style="color:rgb(216, 230, 32);font-weight: bold;">Movie Gener :</span> <span
+                            style="color:white">{{movie.mvGener}}</span> </p>
+                    <p> <span class="ml-2" style="color:rgb(216, 230, 32);font-weight: bold;">Movie RelaseDate :
+                        </span><span style="color:white">
+                            {{movie.releaseDate}}</span> </p>
+
+                    <div class="rating-container d-flex flex-row ">
+                        <div class="d-flex flex-row mr-3">
+                            <p style="margin-right:'10px'"><span
+                                    style="color:rgb(216, 230, 32);font-weight: bold;">Rating: </span></p>
+                            <div class="crop" style.width.px="{{movie.mvRating*20}}">
+                                <div class="mr-3" style="width: 100px">
+                                    <span class="fa fa-star star-color"></span>
+                                    <span class="fa fa-star star-color"></span>
+                                    <span class="fa fa-star star-color"></span>
+                                    <span class="fa fa-star star-color"></span>
+                                    <span class="fa fa-star star-color"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <p style="color:white; margin-left:'20px'">[{{movie.mvRating}}]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-column col-6 mt-3" style="padding: 25px;">
+
+            <h1 class="d-flex flex-row justify-content-center mt-2"
+                style="color:white;font-size: 50px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-weight: bold;">
+                {{movie.mvName}}</h1>
+            <P style="color:white;width: 500px;" class="m-2">{{movie.mvDescrip}}</P>
+            <h1 style="color:rgb(216, 230, 32);;font-weight: bold;">Actors : </h1>
+            <div class="d-flex flex-row margin-left-3">
+                <div *ngFor=" let actor of movie.actors">
+                    <P style="color:white" class="m-2">{{actor.actorName}}</P>
+                </div>
+            </div>
+            <h1 style="color:rgb(216, 230, 32);font-weight: bold;">Technicians : </h1>
+            <div class="d-flex flex-row margin-left-3">
+                <div *ngFor=" let tech of movie.technicians">
+                    <P style="color:white" class="m-2">{{tech.techName}}</P>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="text-align:center">
+        <button (click)="backToEdit()" class="btn btn-warning m-0 border border-dark">Back</button>
+    </div>
+</div>

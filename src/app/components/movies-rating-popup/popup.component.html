@@ -1,0 +1,11 @@
+<div mat-dialog-content>
+  <p>Enter Movie Rating</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Movie Rating(1 to 5)?</mat-label>
+    <input matInput [(ngModel)]="mvRating">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions class="d-flex flex-row justify-content-between">
+  <button mat-button  cdkFocusInitial (click)="openEditPage()">Back</button>
+  <button mat-button [mat-dialog-close]="mvRating" cdkFocusInitial (click)="openlog()">Ok</button>
+</div>

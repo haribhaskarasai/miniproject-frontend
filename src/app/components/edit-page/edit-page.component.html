@@ -1,0 +1,53 @@
+<app-header></app-header>
+<div class="bg-container">
+<div style=" text-align: center;" class="d-flex flex-row justify-content-center p-5">
+    <mat-card class="example-card m-4 mt-5" >
+    <mat-card-header class=" d-flex flex-row justify-content-center">
+      <mat-card-title >Movies</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="https://www.pngkit.com/png/detail/17-175707_reels-and-gtel-moviereelsandpopcorn-movie-reel-and-popcorn.png" >
+    <mat-card-content >
+        <p>
+            To perform Edit Operations about Movies just go with the options below
+          </p>
+    </mat-card-content>
+    <mat-card-actions  class="d-flex flex-row justify-content-between">
+        <button mat-button style="opacity: 0.7;" routerLink="/addMovieDetailsForm" class="btn btn-success ">Add</button>
+        <button mat-button style="opacity: 0.7;" (click)="openPopupForm()" class="btn btn-warning ">Update</button>
+        <button mat-button style="opacity: 0.7;"  (click)="openDeleteMovieForm()"  class="btn btn-danger ">Delete</button>
+      </mat-card-actions>
+  </mat-card>
+  <mat-card class="example-card m-4 mt-5">
+    <mat-card-header  class=" d-flex flex-row justify-content-center">
+      <mat-card-title>Cast</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image style="width: 300px;height:200px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY3024e9l8xiP6BEBVp-iv6QDjJ5t73Ivzmg&usqp=CAU" >
+    <mat-card-content>
+      <p>
+        To perform Edit Operations about Actors just go with the options below
+      </p>
+    </mat-card-content>
+    <mat-card-actions class="d-flex flex-row justify-content-between">
+        <button mat-button style="opacity: 0.7;" (click)="opeAnddActorPopupForm()" class="btn btn-success ">Add</button>
+        <button mat-button style="opacity: 0.7;" (click)="openUpdateActorPopupForm()" class="btn btn-warning ">Update</button>
+        <button mat-button style="opacity: 0.7;"  (click)="openDeleteActorPopupForm()" class="btn btn-danger ">Delete</button>
+      </mat-card-actions>
+  </mat-card>
+  <mat-card class="example-card m-4 mt-5">
+    <mat-card-header class=" d-flex flex-row justify-content-center">
+      <mat-card-title>Crew</mat-card-title>
+    </mat-card-header >
+    <img mat-card-image src="https://media.istockphoto.com/vectors/making-movie-video-production-template-with-small-people-in-the-of-vector-id1168891595?k=20&m=1168891595&s=612x612&w=0&h=KN1fYNFc5-L6Fxx1tWiEKQOYwn261pjRPl7ZY1OxmPo=" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+        <p>
+            To perform Edit Operations about Technicians just go with the options below
+          </p>
+    </mat-card-content>
+    <mat-card-actions  class="d-flex flex-row justify-content-between">
+      <button mat-button style="opacity: 0.7;" (click)="opeAddTechPopupForm()" class="btn btn-success ">Add</button>
+      <button mat-button style="opacity: 0.7;" (click)="openUpdateTechPopupForm()" class="btn btn-warning ">Update</button>
+      <button mat-button style="opacity: 0.7;" (click)="openDeleteTechPopupForm()" class="btn btn-danger ">Delete</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+</div>

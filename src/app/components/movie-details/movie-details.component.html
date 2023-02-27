@@ -1,0 +1,80 @@
+<app-header></app-header>
+<!-- <h2>movie Details</h2>
+
+<hr />
+<div *ngIf="movie">
+    <div>
+        <label><b>Movie Id: </b></label> {{movie.mvId}}
+    </div>
+    <div>
+        <label><b>Movie Name: </b></label> {{movie.mvName}}
+    </div>
+    <div>
+        <label><b>Release Date: </b></label> {{movie.releaseDate}}
+    </div>
+</div>
+
+<br> -->
+<div class="bg-container">
+    <div class="row">
+        <div class="col-1"></div>
+        <div *ngIf="movie" class="d-flex flex-column margin-left-5 mt-5 m-2 col-4">
+            <div>
+                <div class="video">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="video embed-responsive-item" src="https://www.youtube.com/watch?v=f_vbAtFSEc0"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="m-3">
+                    <div class="d-flex flex-row justify-content-between">
+                        <p> <span style="color:rgb(216, 230, 32);font-weight: bold;">Movie Genre :</span>  <span
+                                style="color:white">{{movie.mvGener}}</span> </p>
+                        <p> <span class="ml-2" style="color:rgb(216, 230, 32);font-weight: bold;">Movie RelaseDate : </span><span style="color:white">
+                                {{movie.releaseDate}}</span> </p>
+                    </div>
+                    <div class="rating-container d-flex flex-row ">
+                        <div class="d-flex flex-row mr-3">
+                            <p style="margin-right:'10px'"><span style="color:rgb(216, 230, 32);font-weight: bold;">Rating: </span></p>
+                            <div class="crop" style.width.px="{{movie.mvRating*20}}">
+                                <div class="mr-3" style="width: 100px">
+                                    <span class="fa fa-star star-color"></span>
+                                    <span class="fa fa-star star-color"></span>
+                                    <span class="fa fa-star star-color"></span>
+                                    <span class="fa fa-star star-color"></span>
+                                    <span class="fa fa-star star-color"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <p style="color:white; margin-left:'20px'">[{{movie.mvRating}}]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex flex-column col-6 mt-3" style="padding: 25px;">
+
+            <h1 class="d-flex flex-row justify-content-center mt-2"
+                style="color:white;font-size: 50px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-weight: bold;">
+                {{movie.mvName}}</h1>
+                <P style="color:white;width: 500px;" class="m-2">{{movie.mvDescrip}}</P>
+            <h1 style="color:rgb(216, 230, 32);;font-weight: bold;">Actors : </h1>
+            <!-- <div class="d-flex flex-row margin-left-3">
+                <div *ngFor=" let actor of movie.actors">
+                    <P style="color:white" class="m-2">{{actor.actorName}}</P>
+                </div>
+            </div> -->
+            <nav mat-tab-nav-bar backgroundColor="white" [tabPanel]="tabPanel">
+                <a mat-tab-link *ngFor="let link of links"
+                   (click)="activeLink = link"
+                   [active]="activeLink == link" style="color:white" > {{link}} </a>
+              </nav>
+              <mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>          
+            <h1 style="color:rgb(216, 230, 32);font-weight: bold;">Technicians : </h1>
+            <div class="d-flex flex-row margin-left-3">
+                <div *ngFor=" let tech of movie.technicians">
+                    <P style="color:white" class="m-2">{{tech.techName}}</P>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,121 @@
+<app-header></app-header>
+<!-- <div class="container">
+    <div class="row">
+      <div class="col-md-3 mx-auto my-5" *ngFor="let movie of movies">
+        <mdb-card>
+            <div class="pricing-table pricing-three-column row m-2">
+                <div class="plan col-sm-4 col-lg-4">
+                    <div class="plan-name-bronze">
+                    <h2>Bronze</h2>
+                    <span>$8.99 / Month</span>
+                    </div>
+                    <ul>
+                    <li class="plan-feature">10 Users</li>
+                    <li class="plan-feature">5TB Disk Space</li>
+                    <li class="plan-feature"><a href="#" class="btn btn-primary btn-plan-select"><i class="icon-white icon-ok"></i> Select</a></li>
+                    </ul>
+                </div>
+            </div>
+          <mdb-card-body>
+            <mdb-card-title>
+              <h4>{{movie.mvName}}</h4>
+            </mdb-card-title>
+  
+            <mdb-card-text>
+              {{movie.mvName}}
+            </mdb-card-text>
+  
+            <button mdbBtn color="primary" (click) = "movieDeails(movie.mvName,movie.releaseDate)">View</button>
+          </mdb-card-body>
+        </mdb-card>
+      </div>
+    </div>
+  </div> -->
+<!-- 
+<div class = "row">
+    <h2> Book List</h2>
+</div>
+
+<table class = "table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th> Movie Id</th>
+            <th> Movie Name </th>
+            <th> Movie Gener </th>
+            <th> Movie Rating </th>
+            <th> Movie ReleaseDate </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let movie of movies" >
+            <td> {{movie.mvId}} </td>
+            <td> {{movie.mvName }} </td>
+            <td> {{movie.mvGener}} </td>
+            <td> {{ movie.mvRating }} </td>
+            <td> {{ movie.releaseDate }} </td>
+            <td>
+               <button (click) = "movieDeails(movie.mvName,movie.releaseDate)" class = "btn btn-primary" style="margin-left: 10px"> View</button>
+            </td>
+        </tr>
+    </tbody>
+</table> -->
+
+<!-- <div class="bg-container">
+  <div class="row">
+      <div *ngFor=" let movie of movies" class="col-3">
+          <mat-card class="example-card m-4 mt-5">
+              <mat-card-header class=" d-flex flex-row justify-content-center">
+                  <mat-card-title>{{movie.mvName }}</mat-card-title>
+              </mat-card-header>
+              <img mat-card-image
+                  src="https://media.istockphoto.com/vectors/making-movie-video-production-template-with-small-people-in-the-of-vector-id1168891595?k=20&m=1168891595&s=612x612&w=0&h=KN1fYNFc5-L6Fxx1tWiEKQOYwn261pjRPl7ZY1OxmPo="
+                  alt="Photo of a Shiba Inu">
+              <mat-card-content>
+                  <p>Movie Gener : {{movie.mvGener}} </p>
+                  <p>Movie Rating : {{ movie.mvRating }} </p>
+                  <p>Movie RelaseDate : {{ movie.releaseDate }}</p>
+              </mat-card-content>
+              <mat-card-actions class="d-flex flex-row justify-content-center">
+                  <button (click)="movieDeails(movie.mvName,movie.releaseDate)" mat-button style="opacity: 0.7;"
+                      class="btn btn-primary ">View</button>
+              </mat-card-actions>
+          </mat-card>
+      </div>
+  </div>
+</div> -->
+<div class="bg-container">
+  <div class="row">
+      <div *ngFor=" let movie of movies" class="col-3">
+          <mat-card class="example-card m-4 mt-5">
+              <mat-card-header class=" d-flex flex-row justify-content-center">
+                  <mat-card-title>{{movie.mvName }}</mat-card-title>
+              </mat-card-header>
+              <img mat-card-image style="height: 30vh;" src={{movie.mvImageUrl}} alt="Photo of a Shiba Inu">
+              <mat-card-content>
+                  <p ><span style="font-weight: bold;">Movie Genre :</span>   {{movie.mvGener}} </p>
+                  <p><span style="font-weight: bold;"> RelaseDate : </span>{{ movie.releaseDate }}</p>
+                  <div class="rating-container d-flex flex-row justify-content-between">
+                      <div class="d-flex flex-row">
+                          <p><span style="font-weight: bold;">Rating:</span></p>
+                          <div class="crop" style.width.px="{{movie.mvRating*20}}">
+                              <div style="width: 100px">
+                                  <span class="fa fa-star star-color"></span>
+                                  <span class="fa fa-star star-color"></span>
+                                  <span class="fa fa-star star-color"></span>
+                                  <span class="fa fa-star star-color"></span>
+                                  <span class="fa fa-star star-color"></span>
+                              </div>
+                          </div>
+                      </div>
+                      <p>[{{movie.mvRating}}]</p>
+                  </div>
+
+              </mat-card-content>
+              <mat-card-actions class="d-flex flex-row justify-content-center">
+                  <button (click)="movieDeails(movie.mvName,movie.releaseDate)" mat-button style="opacity: 0.7;"
+                      class="btn btn-primary ">View</button>
+              </mat-card-actions>
+          </mat-card>
+      </div>
+  </div>
+</div>

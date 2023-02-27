@@ -1,0 +1,63 @@
+<app-header></app-header>
+<div class="bg-container">
+    <div class="card">
+        <div class="card-body ">
+            <form [formGroup]="addTechForm" (ngSubmit)="onSubmit()">
+                <div class="form-group mb-0 mt-1">
+                    <label for="techName" class="mb-0"
+                        [ngStyle]="{'color': 'black','font-size': '20px', 'font-weight': '500' }">Tech Name</label>
+                    <input type="text" id="techName" name="techName" placeholder="Enter Technician Name" formControlName="techName"
+                        class="form-control mb-1" [ngClass]="{ 'is-invalid': submitted && f.techName.errors }" />
+                    <div *ngIf="submitted && f.techName.errors" class="invalid-feedback">
+                        <div *ngIf="f.techName.errors.required">Technician Name is required</div>
+                        <div *ngIf="f.techName.errors?.['maxlength']">Technician Name must be maximum of 20 characters</div>
+                    </div>
+                </div>
+                <div class="form-group mb-0 mt-3">
+                    <label for="techRole" class="mb-0"
+                        [ngStyle]="{'color': 'black','font-size': '20px', 'font-weight': '500' }">Tech Role</label>
+                    <input type="text" id="techRole" placeholder="Enter Technician Role" formControlName="techRole"
+                        class="form-control mb-1" [ngClass]="{ 'is-invalid': submitted && f.techRole.errors }" />
+                    <div *ngIf="submitted && f.techRole.errors" class="invalid-feedback">
+                        <div *ngIf="f.techRole.errors.required">Technician Role is required</div>
+                    </div>
+                </div>
+                <div class="form-group mb-0 mt-3">
+                    <label for="techAge" class="mb-0"
+                        [ngStyle]="{'color': 'black','font-size': '20px', 'font-weight': '500' }">Tech Age</label>
+                    <input type="number" class="form-control mb-1" id="techAge" placeholder="Enter Tech Age"
+                        min="1" max="120" formControlName="techAge"
+                        [ngClass]="{ 'is-invalid': submitted && f.techAge.errors }">
+                    <div *ngIf="submitted && f.techAge.errors" class="invalid-feedback">
+                        <div *ngIf="f.techAge.errors.required">Technician Age is required</div>
+                    </div>
+                </div>
+                <div class="form-group mb-0 mt-3">
+                    <label for="techImageUrl" class="mb-0"
+                        [ngStyle]="{'color': 'black','font-size': '20px', 'font-weight': '500' }">Tech ImageUrl</label>
+                    <input type="text" id="techImageUrl" placeholder="Enter Tech ImageUrl" formControlName="techImageUrl"
+                        class="form-control mb-1" [ngClass]="{ 'is-invalid': submitted && f.techImageUrl.errors }" />
+                    <div *ngIf="submitted && f.techImageUrl.errors" class="invalid-feedback">
+                        <div *ngIf="f.techImageUrl.errors.required">Tech Image Url is required</div>
+                        <div *ngIf="f.techImageUrl.errors?.['minlength']">Tech Image Url must be atleast 8 characters</div>
+                    </div>
+                </div>
+                <div class="form-group mb-0 mt-3">
+                    <label for="techDescrip" class="mb-0"
+                        [ngStyle]="{'color': 'black','font-size': '20px', 'font-weight': '500' }">Tech Description</label>
+                    <input type="text" id="techDescrip" placeholder="Enter Tech Description" formControlName="techDescrip"
+                        class="form-control mb-1" [ngClass]="{ 'is-invalid': submitted && f.techDescrip.errors }" />
+                    <div *ngIf="submitted && f.techDescrip.errors" class="invalid-feedback">
+                        <div *ngIf="f.techDescrip.errors.required">Tech Description is required</div>
+                        <div *ngIf="f.techDescrip.errors?.['minlength']">Tech Description must be atleast 8 characters</div>
+                    </div>
+                </div>
+                <div class="form-group text-center d-flex flex-row justify-content-center">
+                    <button [disabled]="addTechForm.invalid" class="btn btn-primary mt-3" type="submit">
+                        Add
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
